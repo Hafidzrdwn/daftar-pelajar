@@ -5,10 +5,6 @@ if (!isset($_SESSION["login-daftar-pelajar"])) {
   exit;
 }
 
-if ($_SESSION['username-users'] == 'tester') {
-  header("Location: index2.php");
-}
-
 require_once("functions.php");
 
 $pelajar = query("SELECT * FROM pelajar");
@@ -64,13 +60,20 @@ $jumlah_baris_database = mysqli_num_rows($result);
         </form>
       </div>
       <div class="col-lg-6 text-end btn-add">
-        <a href="tambah.php" class="ms-auto btn btn-success">Tambah Data Pelajar<i class="ms-2 fas fa-plus-circle"></i></a>
+        <?php if ($_SESSION['username-users'] != 'tester') : ?>
+          <a href="tambah.php" class="ms-auto btn btn-success">Tambah Data Pelajar<i class="ms-2 fas fa-plus-circle"></i></a>
+        <?php else : ?>
+          <a href="testing.php" class="ms-auto btn btn-success">Kembali Ke Halaman Testing</a>
+        <?php endif; ?>
       </div>
     </div>
     <!-- jumlah data -->
     <div class="row my-4 px-5 countData">
       <div class="col">
         <h6>Jumlah data : <?= count($pelajar); ?></h6>
+        <?php if ($_SESSION['username-users'] == 'tester') : ?>
+          <p class="text-danger"><span class="fw-bold">Info :</span> Fitur edit data dan hapus data hanya bisa dilakukan oleh admin.</p>
+        <?php endif; ?>
       </div>
     </div>
     <!-- tabel -->

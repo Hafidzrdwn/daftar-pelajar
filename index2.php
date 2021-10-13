@@ -77,7 +77,7 @@ if (isset($_POST["tambah"])) {
     <div class="row text-center justify-content-center align-items-center px-5 mt-5">
       <div class=" col-lg-6">
         <p><strong><span class="text-danger">Info</span> : Demi keberhasilan web app ini, </strong>Silahkan mengisi data sesuai perintah, tenang form dibawah bukan phising jadi sudah dipastikan aman.</p>
-        <p><strong>Jumlah data yang ada saat ini : <?= count($pelajar); ?></strong>. <span class="text-danger">Jumlah data yang dibutuhkan : 10.</span></p>
+        <p><strong>Jumlah data yang ada saat ini : <?= count($pelajar); ?></strong>. <span class="text-danger">Jumlah data yang dibutuhkan : 35.</span></p>
       </div>
     </div>
 

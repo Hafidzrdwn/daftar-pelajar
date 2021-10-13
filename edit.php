@@ -5,8 +5,10 @@ if (!isset($_SESSION["login-daftar-pelajar"])) {
   exit;
 }
 
+$id = $_GET['id'];
+
 if ($_SESSION['username-users'] == 'tester') {
-  header("Location: index2.php");
+  header("Location: detail.php?id=$id");
 }
 
 if (!isset($_GET['id'])) {
@@ -20,7 +22,7 @@ $pelajar = query("SELECT * FROM pelajar");
 $data_jurusan = query("SELECT * FROM data_jurusan");
 $errors = " ";
 
-$id = $_GET['id'];
+
 
 //query pelajar berdasarkan id dari url
 $p = query("SELECT * FROM pelajar WHERE id = $id")[0];
@@ -70,7 +72,7 @@ if (isset($_POST["edit"])) {
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <title>Halaman Edit</title>
+  <title>Halaman Edit Data</title>
 
   <!-- MY CSS -->
   <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>" />

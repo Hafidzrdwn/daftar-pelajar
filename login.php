@@ -46,7 +46,9 @@ if (isset($_POST['login'])) {
         $_SESSION['username-users'] = $username;
 
         if ($username == 'tester' && $password == 'orangbaik') {
-          header("Location: tester/index2.php");
+          header("Location: index2.php");
+        } else if ($username == 'admin' && $password == 'hafidzridwancahya2005') {
+          header("Location: index.php");
         }
 
         //cek remember me
@@ -56,7 +58,6 @@ if (isset($_POST['login'])) {
           setcookie('usekey', hash('sha256', $row['username']), time() + 3600 * 24 * 7);
         }
 
-        header("Location: index.php");
         exit;
       } else {
         //jika password salah

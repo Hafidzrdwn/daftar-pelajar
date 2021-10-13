@@ -43,6 +43,7 @@ if ($_SESSION['username-users'] != 'tester') {
             <h5 class="fw-bold card-title mb-2">Halo Tester terimakasih sudah mengisi form!!</h5>
             <p>Apakah anda ingin logout?</p>
             <a href="index2.php" class="btn btn-success">Isi Data Lagi</a>
+            <a href="index.php" class="btn btn-primary">Lihat Daftar Data</a>
             <a href="logout.php" class="btn btn-danger">Logout</a>
           </div>
         </div>

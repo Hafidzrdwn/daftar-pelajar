@@ -6,17 +6,17 @@ if (!isset($_SESSION["login-daftar-pelajar"])) {
   exit;
 }
 
+$id = $_GET['id'];
+$gambar = $_GET['gambar'];
+
 if ($_SESSION['username-users'] == 'tester') {
-  header("Location: index2.php");
+  header("Location: index.php");
 }
 
 if (!isset($_GET['id'])) {
   header("Location: index.php");
   exit;
 }
-
-$id = $_GET['id'];
-$gambar = $_GET['gambar'];
 
 ?>
 <!DOCTYPE html>

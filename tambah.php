@@ -6,7 +6,7 @@ if (!isset($_SESSION["login-daftar-pelajar"])) {
 }
 
 if ($_SESSION['username-users'] == 'tester') {
-  header("Location: index2.php");
+  header("Location: index.php");
 }
 
 require_once("functions.php");
@@ -59,7 +59,7 @@ if (isset($_POST["tambah"])) {
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <title>Tambah Data</title>
+  <title>Tambah Data Pelajar</title>
 
   <!-- MY CSS -->
   <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>" />

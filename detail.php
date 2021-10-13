@@ -5,10 +5,6 @@ if (!isset($_SESSION["login-daftar-pelajar"])) {
   exit;
 }
 
-if ($_SESSION['username-users'] == 'tester') {
-  header("Location: index2.php");
-}
-
 require_once("functions.php");
 
 $id = $_GET['id'];
@@ -29,7 +25,7 @@ if (!isset($id)) {
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <title>Daftar Pelajar</title>
+  <title>Detail Pelajar</title>
 
   <!-- MY CSS -->
   <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>" />
@@ -44,7 +40,7 @@ if (!isset($id)) {
         <a href="index.php" class="btn btn-secondary">&laquo; Kembali</a>
       </div>
       <div class="col-4 text-center">
-        <h3 class="welcomeText">Halaman Detail </h3>
+        <h3 class="welcomeText">Halaman Detail Pelajar</h3>
       </div>
       <div class="col-4 text-end">
         <a class="ms-5 btn btn-danger" href="logout.php">Logout</a>
@@ -93,24 +89,26 @@ if (!isset($id)) {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://kit.fontawesome.com/2e160f1ac0.js" crossorigin="anonymous"></script>
-  <script>
-    const question = () => {
-      Swal.fire({
-        icon: 'question',
-        title: 'Apakah anda yakin untuk menghapus data',
-        confirmButtonColor: '#DC3545',
-        confirmButtonText: 'Yakin',
-        showCancelButton: true,
-        cancelButtonText: 'Tidak'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          document.location.href = "hapus.php?id=<?= $id; ?>&gambar=<?= $pelajar["gambar"] ?>";
-        } else {
-          Swal.close();
-        }
-      });
-    }
-  </script>
+  <?php if ($_SESSION['username-users'] != 'tester') : ?>
+    <script>
+      const question = () => {
+        Swal.fire({
+          icon: 'question',
+          title: 'Apakah anda yakin untuk menghapus data',
+          confirmButtonColor: '#DC3545',
+          confirmButtonText: 'Yakin',
+          showCancelButton: true,
+          cancelButtonText: 'Tidak'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            document.location.href = "hapus.php?id=<?= $id; ?>&gambar=<?= $pelajar["gambar"] ?>";
+          } else {
+            Swal.close();
+          }
+        });
+      }
+    </script>
+  <?php endif; ?>
 </body>
 
 </html>
