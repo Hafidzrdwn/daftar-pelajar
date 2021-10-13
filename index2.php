@@ -100,14 +100,9 @@ if (isset($_POST["tambah"])) {
             <strong>No Telp tidak boleh kosong dan tidak boleh mengandung huruf!</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
-        <?php elseif ($errors === "bigSizeImage") : ?>
-          <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Size gambar terlalu besar, silahkan upload ulang!</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
         <?php elseif ($errors === "notAnImage") : ?>
           <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>File yang anda upload bukan gambar, silahkan upload ulang!</strong>
+            <strong>mungkin File yang anda upload bukan gambar atau sizenya terlalu besar, silahkan upload ulang!</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         <?php endif; ?>
