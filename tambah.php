@@ -220,7 +220,7 @@ if (isset($_POST["tambah"])) {
   <script src="https://kit.fontawesome.com/2e160f1ac0.js" crossorigin="anonymous"></script>
   <script src="script/script.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <?php if (tambah($_POST) > 0) :
+  <?php if (isset($success)) :
   ?>
     <script>
       Swal.fire({

@@ -5,7 +5,6 @@ if (!isset($_SESSION["login-daftar-pelajar"])) {
   exit;
 }
 
-
 if ($_SESSION['username-users'] != 'tester') {
   header("Location: index.php");
 }
@@ -31,9 +30,6 @@ if (isset($_POST["tambah"])) {
         break;
       case -4:
         $errors = "telpErrors";
-        break;
-      case -6:
-        $errors = "bigSizeImage";
         break;
       case -7:
         $errors = "notAnImage";
@@ -102,7 +98,7 @@ if (isset($_POST["tambah"])) {
           </div>
         <?php elseif ($errors === "notAnImage") : ?>
           <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>mungkin File yang anda upload bukan gambar atau sizenya terlalu besar, silahkan upload ulang!</strong>
+            <strong>File yang anda upload bukan gambar, silahkan upload ulang!</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         <?php endif; ?>
@@ -116,7 +112,7 @@ if (isset($_POST["tambah"])) {
           <!-- NAMA -->
           <div class="mb-3">
             <label for="nama" class="form-label">Nama Lengkap</label>
-            <input autofocus type="text" name="nama" value="<?php if ($errors === "telpErrors" || $errors === "emailErrors" || $errors === "bigSizeImage" || $errors === "notAnImage") : ?><?= $_POST['nama']; ?><?php endif; ?>" class="<?php if ($errors === "nameErrors") : ?> border border-danger <?php endif; ?>form-control" id="nama" required>
+            <input autofocus type="text" name="nama" value="<?php if ($errors === "telpErrors" || $errors === "emailErrors" || $errors === "notAnImage") : ?><?= $_POST['nama']; ?><?php endif; ?>" class="<?php if ($errors === "nameErrors") : ?> border border-danger <?php endif; ?>form-control" id="nama" required>
           </div>
           <!-- JENIS KELAMIN -->
           <div class="mb-3">
@@ -129,13 +125,13 @@ if (isset($_POST["tambah"])) {
                 </label>
               </div>
               <div class="form-check me-3">
-                <input <?php if (($errors === "nameErrors" || $errors === "telpErrors" || $errors === "emailErrors" || $errors === "bigSizeImage" || $errors === "notAnImage") && $_POST['jenis_kelamin'] == "Perempuan") : ?> checked <?php endif; ?> class="form-check-input" type="radio" value="Perempuan" name="jenis_kelamin" id="radio2">
+                <input <?php if (($errors === "nameErrors" || $errors === "telpErrors" || $errors === "emailErrors" || $errors === "notAnImage") && $_POST['jenis_kelamin'] == "Perempuan") : ?> checked <?php endif; ?> class="form-check-input" type="radio" value="Perempuan" name="jenis_kelamin" id="radio2">
                 <label class="form-check-label" for="radio2">
                   Perempuan
                 </label>
               </div>
               <div class="form-check">
-                <input <?php if (($errors === "nameErrors" || $errors === "telpErrors" || $errors === "emailErrors" || $errors === "bigSizeImage" || $errors === "notAnImage") && $_POST['jenis_kelamin'] == "Other") : ?> checked <?php endif; ?> class="form-check-input" type="radio" value="Other" name="jenis_kelamin" id="radio3">
+                <input <?php if (($errors === "nameErrors" || $errors === "telpErrors" || $errors === "emailErrors" || $errors === "notAnImage") && $_POST['jenis_kelamin'] == "Other") : ?> checked <?php endif; ?> class="form-check-input" type="radio" value="Other" name="jenis_kelamin" id="radio3">
                 <label class="form-check-label" for="radio3">
                   Other
                 </label>
@@ -153,13 +149,13 @@ if (isset($_POST["tambah"])) {
                 </label>
               </div>
               <div class="form-check me-3">
-                <input <?php if (($errors === "nameErrors" || $errors === "telpErrors" || $errors === "emailErrors" || $errors === "bigSizeImage" || $errors === "notAnImage") && $_POST['kelas'] == "11") : ?> checked <?php endif; ?> class="form-check-input" type="radio" value="11" name="kelas" id="radio5">
+                <input <?php if (($errors === "nameErrors" || $errors === "telpErrors" || $errors === "emailErrors" || $errors === "notAnImage") && $_POST['kelas'] == "11") : ?> checked <?php endif; ?> class="form-check-input" type="radio" value="11" name="kelas" id="radio5">
                 <label class="form-check-label" for="radio5">
                   11
                 </label>
               </div>
               <div class="form-check">
-                <input <?php if (($errors === "nameErrors" || $errors === "telpErrors" || $errors === "emailErrors" || $errors === "bigSizeImage" || $errors === "notAnImage") && $_POST['kelas'] == "12") : ?> checked <?php endif; ?> class="form-check-input" type="radio" value="12" name="kelas" id="radio6">
+                <input <?php if (($errors === "nameErrors" || $errors === "telpErrors" || $errors === "emailErrors" || $errors === "notAnImage") && $_POST['kelas'] == "12") : ?> checked <?php endif; ?> class="form-check-input" type="radio" value="12" name="kelas" id="radio6">
                 <label class="form-check-label" for="radio6">
                   12
                 </label>
@@ -177,13 +173,13 @@ if (isset($_POST["tambah"])) {
                 </label>
               </div>
               <div class="form-check me-3">
-                <input <?php if (($errors === "nameErrors" || $errors === "telpErrors" || $errors === "emailErrors" || $errors === "bigSizeImage" || $errors === "notAnImage") && $_POST['jurusan'] == "IPS") : ?> checked <?php endif; ?> class="form-check-input" type="radio" value="IPS" name="jurusan" id="radio8">
+                <input <?php if (($errors === "nameErrors" || $errors === "telpErrors" || $errors === "emailErrors" || $errors === "notAnImage") && $_POST['jurusan'] == "IPS") : ?> checked <?php endif; ?> class="form-check-input" type="radio" value="IPS" name="jurusan" id="radio8">
                 <label class="form-check-label" for="radio8">
                   IPS
                 </label>
               </div>
               <div class="form-check">
-                <input <?php if (($errors === "nameErrors" || $errors === "telpErrors" || $errors === "emailErrors" || $errors === "bigSizeImage" || $errors === "notAnImage") && $_POST['jurusan'] == "Other(SMK)") : ?> checked <?php endif; ?> class="form-check-input" type="radio" value="Other(SMK)" name="jurusan" id="radio9">
+                <input <?php if (($errors === "nameErrors" || $errors === "telpErrors" || $errors === "emailErrors" || $errors === "notAnImage") && $_POST['jurusan'] == "Other(SMK)") : ?> checked <?php endif; ?> class="form-check-input" type="radio" value="Other(SMK)" name="jurusan" id="radio9">
                 <label class="form-check-label" for="radio9">
                   Other(SMK)
                 </label>
@@ -193,26 +189,22 @@ if (isset($_POST["tambah"])) {
           <!-- EMAIL -->
           <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" name="email" value="<?php if ($errors === "nameErrors" || $errors === "telpErrors" || $errors === "bigSizeImage" || $errors === "notAnImage") : ?><?= $_POST['email']; ?><?php endif; ?>" class="<?php if ($errors === "emailErrors") : ?>border border-danger <?php endif; ?> form-control" id="email" aria-describedby="emailHelp" required>
+            <input type="email" name="email" value="<?php if ($errors === "nameErrors" || $errors === "telpErrors" || $errors === "notAnImage") : ?><?= $_POST['email']; ?><?php endif; ?>" class="<?php if ($errors === "emailErrors") : ?>border border-danger <?php endif; ?> form-control" id="email" aria-describedby="emailHelp" required>
             <div id="emailHelp" class="form-text"><?php if ($errors === "emailErrors") : ?>panjang email harus 10 karakter / lebih dan kombinasi huruf + angka. <?php else : ?>Kami tidak akan menyebarkan email anda (keamanan terjamin).<?php endif; ?></div>
           </div>
           <!-- NO TELP -->
           <div class="mb-3">
             <label for="telp" class="form-label">No. Telp</label>
-            <input type="text" name="telp" value="<?php if ($errors === "nameErrors" || $errors === "emailErrors" || $errors === "bigSizeImage" || $errors === "notAnImage") : ?><?= $_POST['telp']; ?><?php endif; ?>" class="<?php if ($errors === "telpErrors") : ?> border border-danger <?php endif; ?> form-control" id="telp" aria-describedby="emailHelp" required>
+            <input type="text" name="telp" value="<?php if ($errors === "nameErrors" || $errors === "emailErrors" || $errors === "notAnImage") : ?><?= $_POST['telp']; ?><?php endif; ?>" class="<?php if ($errors === "telpErrors") : ?> border border-danger <?php endif; ?> form-control" id="telp" aria-describedby="emailHelp" required>
             <div id="emailHelp" class="form-text">Kami tidak akan menyebarkan nomor telepon anda (keamanan terjamin).</div>
           </div>
           <!-- GAMBAR -->
           <div class="mb-3">
             <img src="images/nophoto.png" class="imgPreview w-25 img-thumbnail d-block mb-2" alt="">
             <label for="formFile" class="form-label">Gambar</label>
-            <input class="gambar form-control <?php if ($errors === "bigSizeImage" || $errors === "notAnImage") : ?> border border-danger <?php endif; ?>" onchange="previewImage()" name="gambar" type="file" id="formFile">
-            <div class="form-text <?php if ($errors === "bigSizeImage" || $errors === "notAnImage") : ?> text-danger <?php endif; ?>">
-              <?php if ($errors === "bigSizeImage" || $errors === "notAnImage") : ?>
-                Info : size maksimal = 3mb, ektensi = jpg/jpeg/png
-              <?php else : ?>
-                Info : anda bisa saja tidak mengupload gambar.
-              <?php endif; ?>
+            <input class="gambar form-control <?php if ($errors === "notAnImage") : ?> border border-danger <?php endif; ?>" onchange="previewImage()" name="gambar" type="file" id="formFile">
+            <div class="form-text <?php if ($errors === "notAnImage") : ?> text-danger <?php endif; ?>">
+              Info : size maksimal = 3mb, ektensi = jpg/jpeg/png , Anda bisa saja tidak mengupload gambar.
             </div>
           </div>
           <button type="submit" name="tambah" class="w-100 mt-2 btn btn-primary">Submit</button>
@@ -225,7 +217,7 @@ if (isset($_POST["tambah"])) {
   <script src="https://kit.fontawesome.com/2e160f1ac0.js" crossorigin="anonymous"></script>
   <script src="script/script.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <?php if (tambah($_POST) > 0) :
+  <?php if (isset($success)) :
   ?>
     <script>
       Swal.fire({
