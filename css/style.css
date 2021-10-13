@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.passwordField {
+  position: relative;
+}
+.showPass,
+.hidePass {
+  font-size: 20px;
+  position: absolute;
+  top: 60%;
+  right: 15px;
+  cursor: pointer;
+}
+
+.eyeUpdatePosition{
+  top: 45%;
+}
+
+/* TABLE INDEX PHP */
+.tableDiv{
+  height: 420px;
+  overflow: scroll;
+}
+.emptyTable{
+  overflow: initial;
+}
+.oneData{
+  height: 220px;
+  overflow: initial;
+}
+
+.card-detail-wrapper{
+  overflow: hidden;
+}
+
+/* index php */
+@media (max-width: 576px) {
+  .welcomeText{
+    font-size: 20px !important;
+  }
+  .form-search{
+    width: 100% !important;
+  }
+  .btn-add{
+    margin-top: 25px;
+    text-align: center !important;
+  }
+  .countData{
+    text-align: center;
+  }
+  .tableDiv{
+    padding: 0 !important;
+    margin: 22px 0 0 !important;
+  }
+  .imageData{
+    width: 75px !important;
+  }
+
+  /* detail php */
+  .card-detail-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  .card-detail-wrapper img{
+    width: 100%;
+  }
+
+  /* tambah php */
+  .form-tambah{
+    padding: 0 !important;
+  }
+}
