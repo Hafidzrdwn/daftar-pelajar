@@ -97,8 +97,8 @@ if (isset($_POST["tambah"])) {
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         <?php elseif ($errors === "notAnImage") : ?>
-          <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>File yang anda upload bukan gambar, silahkan upload ulang!</strong>
+          <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+            <strong>mungkin file yang anda upload bukan gambar dan terlalu besar sizenya, silahkan upload ulang!</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         <?php endif; ?>
