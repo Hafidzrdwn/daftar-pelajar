@@ -85,7 +85,6 @@ function upload()
 {
     $namaFile = $_FILES['gambar']['name'];
     $tipeFile = $_FILES['gambar']['type'];
-    $ukuranFile = $_FILES['gambar']['size'];
     $error = $_FILES['gambar']['error'];
     $tmpName = $_FILES['gambar']['tmp_name'];
 
@@ -95,15 +94,20 @@ function upload()
         return 'nophoto.png';
     }
 
-    //cek jika ukurannya terlalu besar
-    if ($ukuranFile > 3000000) {
-        return -6;
-    }
-
     //cek apakah yang diupload adalah gambar
     $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
     $format = strtolower(pathinfo($namaFile, PATHINFO_EXTENSION));
     if (!in_array($format, $ekstensiGambarValid)) {
+        return -7;
+    }
+
+    //cek jika ukurannya terlalu besar
+    if ($_FILES["gambar"]["size"] > 3000000) {
+        return -6;
+    }
+
+    // cek type file
+    if ($tipeFile != 'image/jpg' && $tipeFile != 'image/jpeg' && $tipeFile != 'image/png') {
         return -7;
     }
 
