@@ -1,7 +1,11 @@
 <?php
 
 //Koneksi database
-$conn = mysqli_connect("localhost", "root", "", "phpapp");
+// Development Connection
+// $conn = mysqli_connect("localhost", "root", "", "phpapp");
+
+// Remote Database Connection
+$conn = mysqli_connect("remotemysql.com", "7PyCt8grYU", "U4nv7AzN97", "7PyCt8grYU");
 
 function query($query)
 {
