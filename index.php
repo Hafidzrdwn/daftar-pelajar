@@ -5,6 +5,7 @@ if (!isset($_SESSION["login-daftar-pelajar"])) {
   exit;
 }
 
+
 require_once("functions.php");
 
 $pelajar = query("SELECT * FROM pelajar");

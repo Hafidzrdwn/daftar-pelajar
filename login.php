@@ -24,8 +24,8 @@ if (isset($_SESSION["login-daftar-pelajar"])) {
 //ketika tombol login ditekan
 if (isset($_POST['login'])) {
 
-  $username = $_POST["username"];
-  $password = $_POST["password"];
+  $username = strtolower($_POST["username"]);
+  $password = strtolower($_POST["password"]);
 
   //cari didatabase apakah ada value field username yang sama seperti variabel $username
   $result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username'");
@@ -45,9 +45,11 @@ if (isset($_POST['login'])) {
         $_SESSION['login-daftar-pelajar'] = true;
         $_SESSION['username-users'] = $username;
 
-        if ($username == 'tester' && $password == 'orangbaik') {
+        if ($username === 'tester' && $password === 'orangbaik') {
           header("Location: index2.php");
-        } else if ($username == 'admin' && $password == 'hafidzridwancahya2005') {
+        }
+
+        if ($username === 'admin' && $password === 'hafidzridwancahya2005') {
           header("Location: index.php");
         }
 
