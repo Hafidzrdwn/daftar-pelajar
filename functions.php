@@ -107,11 +107,6 @@ function upload()
         return -7;
     }
 
-    // cek type file
-    if ($tipeFile != 'image/jpg' && $tipeFile != 'image/jpeg' && $tipeFile != 'image/png') {
-        return -7;
-    }
-
     //lolos pengecekan, gambar siap diupload
     //generate nama gambar baru
     $namaFileBaru = uniqid();
