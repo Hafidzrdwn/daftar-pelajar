@@ -49,7 +49,7 @@ if (isset($_POST['login'])) {
           header("Location: index2.php");
         }
 
-        if ($username === 'admin' && $password === 'hafidzridwancahya2005') {
+        if ($username === 'admin' && $password === 'loginadmin123') {
           header("Location: index.php");
         }
 
