@@ -53,6 +53,10 @@ if (isset($_POST['login'])) {
           header("Location: index.php");
         }
 
+        if ($username !== 'admin' && $username !== 'tester') {
+          header("Location: index.php");
+        }
+
         //cek remember me
         if (isset($_POST['remember'])) {
 
